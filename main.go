@@ -2,12 +2,19 @@ package main
 
 import (
 	"fmt"
+	"strings"
 )
 
-func repeat(words ...string) {
-	fmt.Println(words)
+func lenAndUpper(name string) (length int, uppercase string) {
+	defer fmt.Println("I'm Done!")
+	length = len(name)
+	uppercase = strings.ToUpper(name)
+	return
 }
 
 func main() {
-	repeat("choi", "junwoo", "eddie", "luke")
+	totalLength, upperName := lenAndUpper("junwoo")
+
+	fmt.Println(totalLength)
+	fmt.Println(upperName)
 }
