@@ -3,17 +3,18 @@ package main
 import (
 	"fmt"
 
-	"github.com/junwoochoi/learngo/accounts"
+	"github.com/junwoochoi/learngo/mydict"
 )
 
 func main() {
-	account := accounts.NewAccount("junu")
-	account.Deposite(100)
-	fmt.Println(account.Balance())
+	dictionary := mydict.Dictionary{}
+	dictionary["hello"] = "world"
 
-	err := account.Withdraw(200)
-	if err != nil {
+	result, err := dictionary.Search("hello")
+
+	if err == nil {
+		fmt.Println(result)
+	} else {
 		fmt.Println(err)
 	}
-	fmt.Println(account)
 }
